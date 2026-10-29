@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Views Employee</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        center {
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            width: 90%;
+            border: 0;
+            border-top: 2px solid #3498db;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 90%;
+            background-color: white;
+            border-collapse: collapse;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:first-child {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:not(:first-child):hover {
+            background-color: #f1f9ff;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 7px 12px;
+            border-radius: 5px;
+        }
+
+        a[href*="delete"] {
+            background-color: #e74c3c;
+        }
+
+        a[href*="Update"] {
+            background-color: #2ecc71;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <center>
+
+        <h1>All Emplopyee</h1>
+
+        <hr>
+
+        <table border="1" cellpadding="10" cellspacing="0">
+
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Salary</td>
+                <td>Designation</td>
+                <td>Company_name</td>
+                <td>Address</td>
+                <td>Role</td>
+                <td>Age</td>
+                <td>Dob</td>
+                <td>Delete</td>
+                <td>Udpate</td>
+            </tr>
+
+            {% for user in users %}
+
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.Salary}}</td>
+                <td>{{user.designation}}</td>
+                <td>{{user.company_name}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.role}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.dob}}</td>
+
+                <td>
+                    <a href="{% url 'delete' user.id %}">Delete</a>
+                </td>
+
+                <td>
+                    <a href="{% url 'Update' user.id %}">Update</a>
+                </td>
+
+            </tr>
+
+            {% empty %}
+
+            {% endfor %}
+
+        </table>
+
+    </center>
+
+</body>
+
+</html>
+
+
+

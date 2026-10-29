@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Rigister</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        center {
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        hr {
+            width: 80%;
+            border: 0;
+            border-top: 2px solid #3498db;
+            margin: 20px auto;
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 25px;
+        }
+
+        form {
+            width: 400px;
+            margin: auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        form p {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #217dbb;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Employee Management System Application</h1>
+
+        <hr>
+
+        <h2>Add New Employee Form</h2>
+
+        <form method="post">
+
+            {%csrf_token%}
+
+            {{form.as_p}}
+
+            <button type="submit">add Employee</button>
+
+        </form>
+
+    </center>
+
+</body>
+
+</html>
+```

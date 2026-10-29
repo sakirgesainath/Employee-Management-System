@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Delete</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .delete-box {
+            width: 400px;
+            margin: 100px auto;
+            padding: 35px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #e74c3c;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #217dbb;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="delete-box">
+
+        <h1>Delect Employee</h1>
+
+        <p>
+            Are You Sure want to delete <strong>{{users.id}}</strong>
+        </p>
+
+        <form method="post">
+
+            {% csrf_token %}
+
+            <button type="submit">Yes Delete</button>
+
+        </form>
+
+        <a href="{% url 'getall' %}">View All Employee</a>&nbsp;
+
+    </div>
+
+</body>
+
+</html>
+
